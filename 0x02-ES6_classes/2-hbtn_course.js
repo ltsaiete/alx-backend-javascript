@@ -21,9 +21,9 @@ export default class HolbertonCourse {
     return this._length;
   }
 
-  set length(number) {
+  set length(length) {
     if (typeof length !== 'number') throw new TypeError('Name must be a Number');
-    this._length = Number(number);
+    this._length = Number(length);
   }
 
   get students() {
