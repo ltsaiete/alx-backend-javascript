@@ -1,4 +1,4 @@
-const fs = require('node:fs');
+const fs = require('fs');
 
 function countStudents(path) {
   return fs.readFile(path, 'utf-8', (err, data) => {

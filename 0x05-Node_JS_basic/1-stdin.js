@@ -1,8 +1,8 @@
-const readline = require('node:readline');
+const readline = require('readline');
 
 const reader = readline.createInterface({
   input: process.stdin,
-  output: process.stdout,
+  output: process.stdout
 });
 
 reader.question('Welcome to Holberton School, what is your name?\n', (name) => {
