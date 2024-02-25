@@ -29,7 +29,7 @@ app.get('/students', (request, response) => {
     });
 
     Object.keys(fields).forEach((field) => {
-      res += `Number of students in ${field}: 6. List: ${fields[field].join(', ')}\n`;
+      res += `Number of students in ${field}: ${fields[field].length}. List: ${fields[field].join(', ')}\n`;
     });
   } catch (error) {
     throw new Error('Cannot load the database');
