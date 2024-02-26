@@ -1,5 +1,6 @@
 const express = require('express');
 const fs = require('node:fs');
+const countStudents = require('./3-read_file_async');
 
 const databasePath = process.argv[2];
 
@@ -7,32 +8,14 @@ const app = express();
 
 app.get('/', (request, response) => response.send('Hello Holberton School!'));
 
-app.get('/students', (request, response) => {
+app.get('/students', async (request, response) => {
   let res = 'This is the list of our students\n';
+
   try {
-    const data = fs.readFileSync(databasePath, 'utf-8');
-    const dataArray = data.split('\n');
-    dataArray.pop();
-    dataArray.shift();
-
-    res += `Number of students: ${dataArray.length}\n`;
-
-    const fields = {};
-
-    dataArray.forEach((student) => {
-      const [firstname, , , field] = student.split(',');
-      if (fields[field]) {
-        fields[field].push(firstname);
-      } else {
-        fields[field] = [firstname];
-      }
-    });
-
-    Object.keys(fields).forEach((field) => {
-      res += `Number of students in ${field}: ${fields[field].length}. List: ${fields[field].join(', ')}\n`;
-    });
+    const messages = await countStudents(databasePath);
+    messages.forEach((message) => (res += `${message}\n`));
   } catch (error) {
-    throw new Error('Cannot load the database');
+    res += error.message;
   }
 
   return response.send(res);
