@@ -33,9 +33,7 @@ async function countStudents(path) {
       });
       return messages;
     })
-    .catch(() => {
-      return new Error('Error: Cannot load the database');
-    });
+    .catch(() => new Error('Error: Cannot load the database'));
 }
 
 module.exports = countStudents;
