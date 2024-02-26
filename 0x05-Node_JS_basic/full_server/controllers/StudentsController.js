@@ -2,7 +2,7 @@ import { readDatabase } from '../utils';
 const databasePath = process.argv[2];
 export class StudentsController {
   static async getAllStudents(request, response) {
-    const messages = ['This is the list of our students\n'];
+    const messages = ['This is the list of our students'];
 
     try {
       const fields = await readDatabase(databasePath);
