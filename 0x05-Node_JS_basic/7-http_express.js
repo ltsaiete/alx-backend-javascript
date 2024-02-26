@@ -1,5 +1,4 @@
 const express = require('express');
-const fs = require('node:fs');
 const countStudents = require('./3-read_file_async');
 
 const databasePath = process.argv[2];
@@ -13,7 +12,9 @@ app.get('/students', async (request, response) => {
 
   try {
     const messages = await countStudents(databasePath);
-    messages.forEach((message) => (res += `${message}\n`));
+    messages.forEach((message) => {
+      res += `${message}\n`;
+    });
   } catch (error) {
     res += error.message;
   }

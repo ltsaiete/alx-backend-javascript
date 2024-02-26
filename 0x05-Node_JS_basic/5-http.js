@@ -1,5 +1,4 @@
 const http = require('http');
-const fs = require('node:fs');
 const countStudents = require('./3-read_file_async');
 
 const databasePath = process.argv[2];
