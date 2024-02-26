@@ -16,7 +16,7 @@ app.get('/students', async (request, response) => {
       res += `${message}\n`;
     });
   } catch (error) {
-    res += error.message;
+    res += 'Cannot load the database';
   }
 
   return response.send(res);

@@ -13,7 +13,7 @@ app.on('request', async (request, response) => {
       const messages = await countStudents(databasePath);
       messages.forEach((message) => response.write(`${message}\n`));
     } catch (error) {
-      response.write(error.message);
+      response.write('Cannot load the database');
     }
     response.end();
   } else {
