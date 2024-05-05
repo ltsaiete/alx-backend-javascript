@@ -3,7 +3,7 @@ const chaiHttp = require('chai-http');
 
 process.argv[2] = './database.csv';
 
-import app from './server';
+import app from './full_server/server';
 
 chai.use(chaiHttp);
 chai.should();
