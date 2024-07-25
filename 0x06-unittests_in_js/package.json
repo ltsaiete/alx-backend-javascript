@@ -1,0 +1,22 @@
+{
+	"name": "0x06-unittests_in_js",
+	"version": "1.0.0",
+	"description": "- How to use Mocha to write a test suite\r - How to use different assertion libraries (Node or Chai)\r - How to present long test suites\r - When and how to use spies\r - When and how to use stubs\r - What are hooks and when to use them\r - Unit testing with Async functions\r - How to write integration tests with a small node server",
+	"main": "0-calcul.js",
+	"scripts": {
+		"lint": "./node_modules/.bin/eslint",
+		"lint-all": "./node_modules/.bin/eslint [0-9]*.js",
+		"lint-fix-all": "./node_modules/.bin/eslint --fix [0-9]*.js",
+		"test": "node ./node_modules/mocha/bin/mocha --require babel-register --exit",
+		"dev": "nodemon --exec babel-node --presets babel-preset-env ./full_server/server.js ./database.csv"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"chai": "^5.1.1",
+		"chai-http": "^5.0.0",
+		"express": "^4.19.2",
+		"mocha": "^10.6.0"
+	}
+}
