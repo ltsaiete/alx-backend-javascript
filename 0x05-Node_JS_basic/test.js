@@ -3,7 +3,7 @@ const chaiHttp = require('chai-http');
 
 process.argv[2] = './database.csv';
 
-import app from './full_server/server';
+const app = require('./full_server/server');
 
 chai.use(chaiHttp);
 chai.should();
@@ -30,7 +30,3 @@ Number of students in SWE: 4. List: Guillaume, Joseph, Paul, Tommy`);
     });
   });
 });
-
-// This is the list of our students
-// Number of students in CS: 6. List: Johenn, Arielle, Jonathen, Emmenuel, Guillaume, Katie
-// Number of students in SWE: 4. List: Guillaume, Joseph, Paul, Tommy
